@@ -1,0 +1,245 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        -64
+      ],
+      "id": "94586fae-9e35-4fa9-ad90-cc6edaeaa913",
+      "name": "When chat message received",
+      "webhookId": "e6c2f2d8-1540-46c7-a04a-022d81b2b52c"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        240,
+        -32
+      ],
+      "id": "d7f5e05f-e8a1-4c89-a568-6dd81c8413b2",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        112,
+        176
+      ],
+      "id": "803557e7-bc67-4543-aec8-5b2be66aef66",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "GSRIQCF1p78y70Bu",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        272,
+        192
+      ],
+      "id": "18a8fe55-9639-400f-b070-f12a895ecd04",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30",
+          "mode": "list",
+          "cachedResultName": "courses",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "courses",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        192
+      ],
+      "id": "800d252e-2b81-49ea-bf81-b4d1895bf815",
+      "name": "courses",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MDyIzGHqmV0dGw3I",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30",
+          "mode": "list",
+          "cachedResultName": "courses",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1475635894,
+          "mode": "list",
+          "cachedResultName": "courses enquiry",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30/edit#gid=1475635894"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        768,
+        144
+      ],
+      "id": "9d62d5ec-cf3c-44d8-95f8-08e4986dff51",
+      "name": "courses enquiry",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MDyIzGHqmV0dGw3I",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30",
+          "mode": "list",
+          "cachedResultName": "courses",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 783489369,
+          "mode": "list",
+          "cachedResultName": "fnq",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fzOr3yhpba6inyZfwyQJkT8BYJ8ujMVS9tZPvq7Fh30/edit#gid=783489369"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        592,
+        192
+      ],
+      "id": "ca61850f-b0da-4c90-8b0e-d660a44c2ca7",
+      "name": "fnq",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MDyIzGHqmV0dGw3I",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "courses": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "courses enquiry": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fnq": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "d79f99e4-b17d-4579-bcd3-799640c576ad",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d4d738f7086d446c5252fafcbb8f4e942dbd33a090fe78deeee00446874aa207"
+  },
+  "nodeGroups": [],
+  "id": "j1t2pJzi1p7rDucw",
+  "tags": []
+}
